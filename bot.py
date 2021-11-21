@@ -9,8 +9,9 @@ import os
 # kk = 0
 # if kk == 0:
 import task1 as tsk1
+import task2 as tsk2
 # if kk == 1:
-import trig as tsk2
+import trig as tsk3
 
 # global ff
 
@@ -33,6 +34,7 @@ bot = telebot.TeleBot(config.TOKEN)
 def menu(message):
 	markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
 	item1 = types.KeyboardButton("Задание 1")
+	item1 = types.KeyboardButton("Задание 2")
 	item2 = types.KeyboardButton("Тригонометрия")
 	markup.add(item1, item2)
 	bot.send_message(message.from_user.id, 'Какое задание будем решать?', reply_markup = markup)
@@ -45,10 +47,14 @@ def question(message):
 		ff=0
 		tsk=tsk1
 		hello(message)
-		
-	elif message.text == "Тригонометрия":
+	if message.text == "Задание 2":
 		ff=1
 		tsk=tsk2
+		hello(message)
+		
+	elif message.text == "Тригонометрия":
+		ff=2
+		tsk=tsk3
 		hello(message)
 		
 	else:
@@ -63,7 +69,9 @@ def hello(message):
 	
 	if ff == 0:
 		bot.send_message(message.from_user.id, 'Задание 1', reply_markup = markup)
-	elif ff == 1:
+	if ff == 1:
+		bot.send_message(message.from_user.id, 'Задание 2', reply_markup = markup)
+	elif ff == 2:
 		bot.send_message(message.from_user.id, 'Тригонометрия', reply_markup = markup)
 	# bot.register_next_step_handler(message, sendp);
 	sendp(message)

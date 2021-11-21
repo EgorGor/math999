@@ -5,26 +5,27 @@ def z1(n):
 	global x
 	global formula
 	m = 2
-	x = n**m
-	formula = f'${n}^{m} = x$'
+	x = 2*n**m
+	formula = f'$2{n}^{m} = x$'
 	
 def z2(n):
 	global x
 	global formula
 	m = 3
-	x = n**m
-	formula = f'${n}^{m} = x$'
+	x = 2*n**m
+	formula = f'$2{n}^{m} = x$'
 	
-def z3(n):
-	global x
-	global formula
-	b = random.randint(2, 4)
-	# a = random.randint(1, 5)
-	c = random.randint(2, 4)
-	x = b**c-n
-	formula = f'$\log_{b}(x+{n}) = {c}$'
+# def z3(n):
+	# global x
+	# global formula
+	# b = random.randint(2, 4)
+	a = random.randint(1, 5)
+	# c = random.randint(2, 4)
+	# x = b**c-n
+	# formula = f'$\log_{b}(x+{n}) = {c}$'
 
-zz = [z1, z2, z3]
+# zz = [z1, z2, z3]
+zz = [z1, z2]
 
 def plot(n):
 	global fig
