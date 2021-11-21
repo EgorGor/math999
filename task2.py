@@ -5,15 +5,15 @@ def z1(n):
 	global x
 	global formula
 	m = 2
-	x = 2*n**m
-	formula = f'$2*{n}^{m} = x$'
+	x = 3*n**m
+	formula = f'$3*{n}^{m} = x$'
 	
 def z2(n):
 	global x
 	global formula
 	m = 3
-	x = 2*n**m
-	formula = f'$2*{n}^{m} = x$'
+	x = 3*n**m
+	formula = f'$3*{n}^{m} = x$'
 	
 # def z3(n):
 	# global x
