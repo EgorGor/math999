@@ -34,9 +34,9 @@ bot = telebot.TeleBot(config.TOKEN)
 def menu(message):
 	markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
 	item1 = types.KeyboardButton("Задание 1")
-	item1 = types.KeyboardButton("Задание 2")
-	item2 = types.KeyboardButton("Тригонометрия")
-	markup.add(item1, item2)
+	item2 = types.KeyboardButton("Задание 2")
+	item3 = types.KeyboardButton("Тригонометрия")
+	markup.add(item1, item2, item3)
 	bot.send_message(message.from_user.id, 'Какое задание будем решать?', reply_markup = markup)
 	bot.register_next_step_handler(message, question)
 def question(message):
@@ -47,7 +47,7 @@ def question(message):
 		ff=0
 		tsk=tsk1
 		hello(message)
-	if message.text == "Задание 2":
+	elif message.text == "Задание 2":
 		ff=1
 		tsk=tsk2
 		hello(message)
@@ -69,7 +69,7 @@ def hello(message):
 	
 	if ff == 0:
 		bot.send_message(message.from_user.id, 'Задание 1', reply_markup = markup)
-	if ff == 1:
+	elif ff == 1:
 		bot.send_message(message.from_user.id, 'Задание 2', reply_markup = markup)
 	elif ff == 2:
 		bot.send_message(message.from_user.id, 'Тригонометрия', reply_markup = markup)
