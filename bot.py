@@ -103,6 +103,11 @@ def sendp(message):
 
 def lalala(message):
 
+	if message is None or message.text is None:
+		bot.send_message(message.from_user.id, 'Ну и зачем ты мне это скинул?')
+		
+		bot.register_next_step_handler(message, lalala)
+		return None
 	
 	if message.text == "Узнать ответ и получить следующее задание":
 		# bot.send_message(message.from_user.id,'Правильный ответ это: ' + str(task1.x))
