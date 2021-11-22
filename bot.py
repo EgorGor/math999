@@ -21,6 +21,9 @@ def is_number(str):
 		return True
 	except ValueError:
 		return False
+		
+		
+		
 
 
 
