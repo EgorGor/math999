@@ -35,6 +35,13 @@ bot = telebot.TeleBot(config.TOKEN)
 @bot.message_handler(content_types=['text'])
 
 def menu(message):
+
+	if message is None or message.text is None:
+		bot.send_message(message.from_user.id, 'Ну и зачем ты мне это скинул?')
+		
+		bot.register_next_step_handler(menu, lalala)
+		return None
+
 	markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
 	item1 = types.KeyboardButton("Задание 1")
 	item2 = types.KeyboardButton("Задание 2")
@@ -46,6 +53,13 @@ def question(message):
 	global ff
 	global kk
 	global tsk
+	
+	if message is None or message.text is None:
+		bot.send_message(message.from_user.id, 'Ну и зачем ты мне это скинул?')
+		
+		bot.register_next_step_handler(question, lalala)
+		return None
+	
 	if message.text == "Задание 1":
 		ff=0
 		tsk=tsk1
