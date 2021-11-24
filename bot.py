@@ -75,7 +75,7 @@ def question(message):
 		hello(message)
 		
 	else:
-		bot.send_message(message.from_user.id, 'Такого задания еще нет :(')
+		bot.send_message(message.from_user.id, 'Такого задания еще нет :((((')
 		bot.register_next_step_handler(message, question)
 
 def hello(message):
