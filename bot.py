@@ -55,7 +55,7 @@ def question(message):
 	global tsk
 	
 	if message is None or message.text is None:
-		bot.send_message(message.from_user.id, 'Ну и зачем ты мне это скинул?')
+		bot.send_message(message.from_user.id, 'Ну и зачем ты мне это скинул?)))')
 		
 		bot.register_next_step_handler(question, lalala)
 		return None
