@@ -57,7 +57,7 @@ def question(message):
 	if message is None or message.text is None:
 		bot.send_message(message.from_user.id, 'Ну и зачем ты мне это скинул?)))')
 		
-		bot.register_next_step_handler(question, lalala)
+		bot.register_next_step_handler(message, question)
 		return None
 	
 	if message.text == "Задание 1":
