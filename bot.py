@@ -39,7 +39,7 @@ def menu(message):
 	if message is None or message.text is None:
 		bot.send_message(message.from_user.id, 'Ну и зачем ты мне это скинул?')
 		
-		bot.register_next_step_handler(menu, lalala)
+		bot.register_next_step_handler(message, menu)
 		return None
 
 	markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
